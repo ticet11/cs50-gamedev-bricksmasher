@@ -47,4 +47,6 @@ function GenerateQuadsPaddles(atlas)
         x = 0
         y = y + 32
     end
+
+    return quads
 end

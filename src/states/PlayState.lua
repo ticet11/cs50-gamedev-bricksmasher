@@ -23,7 +23,7 @@ function PlayState:update(dt)
 
     self.paddle:update(dt)
 
-    if love.keyboard.wasPRessed('escape') then
+    if love.keyboard.wasPressed('escape') then
         love.event.quit()
     end
 end
