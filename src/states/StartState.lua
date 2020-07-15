@@ -10,6 +10,14 @@ function StartState:update(dt)
         gSounds['paddle-hit']:play()
     end
 
+    if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
+        gSounds['confirm']:play()
+
+        if highlighted == 1 then
+            gStateMachine:change('play')
+        end
+    end
+
     if love.keyboard.wasPressed('escape') then
         love.event.quit()
     end
@@ -22,13 +30,13 @@ function StartState:render()
 
     -- instructions
     love.graphics.setFont(gFonts['medium'])
-    
+
     if highlighted == 1 then
         love.graphics.setColor(103 / 255, 1, 1, 1)
     end
-    
+
     love.graphics.printf('START', 0, VIRTUAL_HEIGHT / 2 + 70, VIRTUAL_WIDTH, 'center')
-    
+
     -- reset color
     love.graphics.setColor(1, 1, 1, 1)
 
